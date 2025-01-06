@@ -1,11 +1,35 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1e1e2f, #3b3b5c);
-    color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
+/* Define CSS Variables */
+:root {
+    --primary-color: #976fe0;
+    --primary-color-hover: #5a32a1;
+    --secondary-color: #5d3a9c;
+    --secondary-color-hover: #8c5ce6;
+    --background-gradient: linear-gradient(135deg, #0f0f1e, #2a2a3d);
+    --text-color: #f0f0f0;
+    --text-color-muted: rgba(240, 240, 240, 0.5);
+    --box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+    --transition-time: 0.3s;
+    --font-family: 'Arial', sans-serif;
 }
 
+/* Global Styles */
+body {
+    font-family: var(--font-family);
+    background: var(--background-gradient);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+}
+
+/* Section Styles */
 .sec1 {
     margin: 20px 0;
     display: flex;
@@ -13,33 +37,37 @@ body {
     align-items: center;
 }
 
+/* Button Styles */
 .list_button {
     padding: 10px 20px;
-    background-color: #976fe0;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-time);
 }
 
 .list_button:hover {
-    background-color: #5a32a1;
+    background-color: var(--primary-color-hover);
 }
 
+/* Frame Styles */
 .frame {
-    background: #5d3a9c; 
+    background: var(--secondary-color);
     border-radius: 15px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6); 
-    transition: background 0.3s ease, transform 0.3s ease; 
+    box-shadow: var(--box-shadow);
+    transition: background var(--transition-time) ease, transform var(--transition-time) ease;
 }
 
 .frame:hover {
-    background: #8c5ce6;
-    transform: scale(1.02); 
+    background: var(--secondary-color-hover);
+    transform: scale(1.02);
 }
+
+/* Input Styles */
 .task-input {
     padding: 10px;
     width: 70%;
@@ -47,9 +75,9 @@ body {
     border-radius: 5px;
     margin-right: 10px;
     background: rgba(255, 255, 255, 0.1);
-    color: #f0f0f0;
+    color: var(--text-color);
     position: relative;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-time);
 }
 
 .task-input:hover {
@@ -58,9 +86,10 @@ body {
 
 .task-input.checked {
     text-decoration: line-through;
-    color: rgba(240, 240, 240, 0.5);
+    color: var(--text-color-muted);
 }
 
+/* Date-Time Styles */
 .date-time {
     font-size: 0.8em;
     color: #333;
@@ -69,8 +98,20 @@ body {
     right: 10px;
 }
 
+/* Separator Styles */
 .separator {
     height: 1px;
     background-color: #ccc;
     margin: 10px 0;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
